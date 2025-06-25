@@ -1,12 +1,14 @@
-import bytes from 'bytes'
-import util from 'util'
-import cp from 'child_process'
-import fs from 'fs'
-import os from 'os'
-import sharp from 'sharp'
-import PDFDocument from 'pdfkit'
+import express from 'express';
+import bytes from 'bytes';
+import util from 'util';
+import cp from 'child_process';
+import fs from 'fs';
+import os from 'os';
+import sharp from 'sharp';
+import PDFDocument from 'pdfkit';
 
-const tmpDir = os.tmpdir()
+const tmpDir = os.tmpdir();
+const app = express();
 
 const utils = {
 	formatSize: (n) => bytes(+n, { unitSeparator: ' ' }),
@@ -66,13 +68,11 @@ const utils = {
 	}
 }
 
-const app = express()
-
-app.set('json spaces', 4)
-app.use(express.json({ limit: '200mb' }))
-app.use(express.urlencoded({ extended: true, limit: '200mb' }))
-app.use(favicon(path.join(import.meta.dirname, 'favicon.ico')))
-app.use(morgan('combined'))
+app.set('json spaces', 4);
+app.use(express.json({ limit: '200mb' }));
+app.use(express.urlencoded({ extended: true, limit: '200mb' }));
+app.use(favicon(path.join(import.meta.dirname, 'favicon.ico')));
+app.use(morgan('combined'));
 
 app.use((req, __, next) => {
 	// clear tmp
