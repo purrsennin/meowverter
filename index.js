@@ -23,6 +23,9 @@ const utils = {
 			return false
 		}
 	},
+	isTrue: (str) => [true, 'true'].includes(str),
+	getError: (e) =>
+		String(e).startsWith('[object ') ? 'Internal Server Error' : String(e),
 	toPDF: async (urls, opts = {}) => {
 		const doc = new PDFDocument({ margin: 0, size: 'A4' })
 		const buffs = []
