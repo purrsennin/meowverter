@@ -4,8 +4,10 @@ import util from 'util';
 import cp from 'child_process';
 import fs from 'fs';
 import os from 'os';
+import morgan from 'morgan';
 import sharp from 'sharp';
 import PDFDocument from 'pdfkit';
+import favicon from 'serve-favicon';
 
 const tmpDir = os.tmpdir();
 const app = express();

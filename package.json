@@ -3,6 +3,7 @@
   "dependencies": {
     "express": "*",
     "pdfkit": "*",
+    "morgan": "*",
     "serve-favicon": "*",
     "sharp": "*"
   }
