@@ -67,7 +67,6 @@ const utils = {
 }
 
 const app = express()
-const tmpDir = os.tmpdir()
 
 app.set('json spaces', 4)
 app.use(express.json({ limit: '200mb' }))
