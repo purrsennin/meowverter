@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "dependencies": {
+    "express": "*",
+    "pdfkit": "*",
+    "serve-favicon": "*",
+    "sharp": "*"
+  }
+}
